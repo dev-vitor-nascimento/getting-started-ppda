@@ -13,6 +13,7 @@ Lembre-se de dar ao fork o nome desejado para o novo projeto.
 2. Faça o clone do fork para sua máquina.
 
 3. Abra o projeto em uma IDE de sua preferência
+
     Neste tutorial utilizaremos o  [Visual Studio Code][link-visual-studio-code]
 
 4. Baixe as dependências do projeto.
