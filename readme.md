@@ -1,6 +1,10 @@
 #  📝 COMO COMEÇAR - PLATAFORMA DE APPS
 
-Este tutorial irá descrever como utilizar a Plataforma de Apps de Intelbras em 3 seções: Como criar um base app, Como criar um micro app e Comunicação entre micro apps e internacionalização.
+Este tutorial irá descrever como utilizar a Plataforma de Apps de Intelbras em 3 seções:
+
+1. Como criar um base app.
+1. Como criar um micro app.
+1. Comunicação entre micro apps e internacionalização.
 
 Para utilizar a plataforma e criar projetos nela é necessário ter acesso ao grupo do GitLab [Plataforma Apps][link-plataforma-apps], uma vez com o acesso e as permissões necessárias, siga o tutorial.
 
@@ -21,17 +25,20 @@ Nesta seção será descrito como criar um base app para um novo projeto.
 
 4. Baixe as dependências do projeto.
     
-    Para baixar as dependências utilize o seguinte comando: `flutter pub get`
+    Para baixar as dependências utilize o seguinte comando:
+    ```console
+    flutter pub get
+    ```
 
-5. Executar o app para verificar se ocorreu tudo bem.
+5. Execute o app para verificar se ocorreu tudo bem.
 
-    Em caso positivo, está tela deverá ser exbida.
+    Em caso positivo, está tela deverá ser exbida:
 
     ![Base App Example](images/base_app_example.png)
 
     Nesse ponto você tem uma estrutura genêrica de base app, vamos para as personalizações.
 
-6. No arquivo pubspec.yaml altere o atributo `name` para o nome desejado para o seu projeto.
+6. No arquivo pubspec.yaml altere o atributo **name** para o nome desejado para o seu projeto.
    
     ![Project Name](images/project_name.png)
 
@@ -74,9 +81,9 @@ Nesta seção será descrito como criar um novo micro app para a plataforma.
       		ref: develop
     ```
 
-6. Dentro da pasta lib crie uma classe chamada `MicroAppResolver`.
+6. Dentro da pasta lib crie uma classe chamada **MicroAppResolver**.
    
-    Todo micro app deve ter uma classe `MicroAppResolver` que implementará a classe abstrata `MicroApp` declarada no Micro Core.
+    Todo micro app deve ter uma classe **MicroAppResolver** que implementará a classe abstrata **MicroApp** declarada no Micro Core.
 
     ![Micro app resolver](images/micro_app_resolver.png)
 
@@ -95,7 +102,7 @@ Nesta seção será descrito como criar um novo micro app para a plataforma.
 
     ![Simple page](images/simple_page.png)
 
-8.  Abra o `base app` em uma IDE.
+8.  Abra o **base app** em uma IDE.
 
 9.  Adicione o micro app como dependência do seu base app:
 	
@@ -114,11 +121,11 @@ Nesta seção será descrito como criar um novo micro app para a plataforma.
             ref: master
     ```
 
-10. No arquivo `lib/app/core/micro_apps_resolvers.dart` do base app, adicione a classe `MicroAppResolver` do micro app recém criado à lista de micro apps resolvers.
+10. No arquivo **lib/app/core/micro_apps_resolvers.dart** do base app, adicione a classe **MicroAppResolver** do micro app recém criado à lista de micro apps resolvers.
 
     ![Micro app resolver](images/micro_app_resolvers.png)
 
-11. No app_widget.dart do base app mude o atributo `home` para a página do seu micro app.
+11. No app_widget.dart do base app mude o atributo **home** para a página do seu micro app.
 
     ![App widget](images/app-widget.png)
 
