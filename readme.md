@@ -76,9 +76,9 @@ Nesta seção será descrito como criar um novo micro app para a plataforma.
 	```yml
     micro_core:
         git:
-      		url: https://deploy_token_micro_core_remp:tBAvrQN2SeJmrSBZSczi@git.intelbras.com.br/PlataformaApps/micro_core_remp.git
-     		path: micro_core
-      		ref: develop
+            url: https://deploy_token_micro_core_remp:tBAvrQN2SeJmrSBZSczi@git.intelbras.com.br/PlataformaApps/micro_core_remp.git
+            path: micro_core
+            ref: develop
     ```
 
 6. Dentro da pasta lib crie uma classe chamada **MicroAppResolver**.
