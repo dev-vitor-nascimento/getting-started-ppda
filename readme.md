@@ -8,12 +8,12 @@ Para utilizar a plataforma e criar projetos nela é necessário ter acesso ao gr
 Nesta seção será descrito como criar um base app para um novo projeto.
 
 1. Crie um fork do [Base App Example][link-plataforma-apps]
-Lembre-se de dar ao fork o nome deajdo para o novo projeto.
+Lembre-se de dar ao fork o nome desejado para o novo projeto.
 
 2. Faça o clone do fork para sua máquina.
 
 3. Abra o projeto em uma IDE de sua preferência
-Neste tutorial utilizaremos o  [Visual Studio Code][link-visual-studio-code]
+    Neste tutorial utilizaremos o  [Visual Studio Code][link-visual-studio-code]
 
 4. Baixe as dependências do projeto.
     
@@ -37,7 +37,7 @@ Neste tutorial utilizaremos o  [Visual Studio Code][link-visual-studio-code]
 
     ![imports](images/imports.png)
 
-    Uma vez corrigidos, Agora você tem um base app pronto para utilizar micro apps.
+    Uma vez corrigidos, você terá um base app pronto para utilizar micro apps.
 
 ## 📱 Como criar um micro app.
 
