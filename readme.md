@@ -31,7 +31,7 @@ Nesta seção será descrito como criar um base app para um novo projeto.
 
     Nesse ponto você tem uma estrutura genêrica de base app, vamos para as personalizações.
 
-6. No arquivo pubspec.yaml altere o atributo name para o nome desejado para o seu projeto.
+6. No arquivo pubspec.yaml altere o atributo `name` para o nome desejado para o seu projeto.
    
     ![Project Name](images/project_name.png)
 
@@ -118,7 +118,7 @@ Nesta seção será descrito como criar um novo micro app para a plataforma.
 
     ![Micro app resolver](images/micro_app_resolvers.png)
 
-11. No app_widget.dart do base app mude o atributo home para a página do seu micro app.
+11. No app_widget.dart do base app mude o atributo `home` para a página do seu micro app.
 
     ![App widget](images/app-widget.png)
 
