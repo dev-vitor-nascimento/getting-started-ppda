@@ -75,7 +75,7 @@ Nesta seção será descrito como criar um novo micro app para a plataforma.
 
 	```yml
     micro_core:
-    	git:
+        git:
       		url: https://deploy_token_micro_core_remp:tBAvrQN2SeJmrSBZSczi@git.intelbras.com.br/PlataformaApps/micro_core_remp.git
      		path: micro_core
       		ref: develop
@@ -110,7 +110,7 @@ Nesta seção será descrito como criar um novo micro app para a plataforma.
 
 	```yml
     micro_app_test:
-    	path: ../micro_app_test
+        path: ../micro_app_test
     ```
 
     Obs: Também é possivel importar micro apps de um repositório remoto, como o GitLab.
