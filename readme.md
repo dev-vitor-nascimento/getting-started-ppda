@@ -23,19 +23,19 @@ Neste tutorial utilizaremos o  [Visual Studio Code][link-visual-studio-code]
 
     Em caso positivo, está tela deverá ser exbida.
 
-    ![Base App Example](images\base_app_example.png)
+    ![Base App Example](images/base_app_example.png)
 
     Nesse ponto você tem uma estrutura genêrica de base app, vamos para as personalizações.
 
 6. No arquivo pubspec.yaml altere o atributo name para o nome desejado para o seu projeto.
    
-    ![Project Name](images\project_name.png)
+    ![Project Name](images/project_name.png)
 
 7. O passo anterior vai quebrar alguns imports do projeto, para consertar basta ir nos arquivos e substituir o antigo nome do projeto pelo novo.
 
-    ![Folders](images\folders.png)
+    ![Folders](images/folders.png)
 
-    ![imports](images\imports.png)
+    ![imports](images/imports.png)
 
     Uma vez corrigidos, Agora você tem um base app pronto para utilizar micro apps.
 
