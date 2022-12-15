@@ -227,7 +227,9 @@ Para seguir com este tutorial é necessário que você já tenha conhecimento ne
 
 15. Agora entendemos como um micro app consegue chamar outro sem sequer saber que ele existe.
 
-16. Revisando o fluxo de forma genérica: 
+16. Execute o base app e veja acontecer.
+
+17. Revisando o fluxo de forma genérica: 
 	- Um **micro app A** emite um evento.
 	- A escuta deste evento deve estar registrada no **base app**.
 	- Ao escutar este evento o **base app** irá executar um função de redirecionamento presente no **micro app B**.
