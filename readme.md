@@ -235,8 +235,106 @@ Para seguir com este tutorial é necessário que você já tenha conhecimento ne
 	- Ao escutar este evento o **base app** irá executar um função de redirecionamento presente no **micro app B**.
 	- Está função irá fazer um push de uma página no **micro app B**.
 
+18. IMPORTANTE: Lembre-se, nenhum micro app sabe da existência de outro, toda e qualquer comunicação entre micro apps deve ser intermedia pelo base app, através de eventos.
+
+---
+
 ## 🌐 Internacionalização de micro apps.
 Nesta seção será descrito como internacionalizar micro apps.
+
+**Caso tenha feito o tutorial da sesão anterior, pule para o passo 4**
+
+1. Clone os seguintes repositórios:
+
+    Base App Example:
+
+    ```console
+    git clone https://git.intelbras.com.br/PlataformaApps/base_app_example.git
+    ```
+
+    Micro App Example 1:
+
+	```console
+    git clone https://git.intelbras.com.br/PlataformaApps/micro_app_example.git
+    ```
+
+    Micro App Example 2:
+
+	```console
+    git clone https://git.intelbras.com.br/PlataformaApps/micro_app_example_2.git
+    ```
+
+2. No **base app** mude para a branch micro_app_example.
+   
+    Baixe todas as branches:
+    ```console
+    git fetch --all
+    ```
+
+    Mude de branch:
+    ```console
+    git checkout micro_app_example.
+    ```
+
+3. Baixe as dependências da nova branch
+    ```console
+    flutter pub get
+    ```
+
+4. No **base app** na pasta *lib/i18n* existem 3 arquivos de internacionalização.
+
+    ![App widget](images/base_app_lib_i18n.png)
+
+5. Estes arquivos são .json, onde as chaves são idênticas em todos os três arquivos, mas os valores variam de língua para língua, veja:
+    
+    en_US:
+
+    ![App widget](images/en_US.png)
+
+    es_ES:
+
+    ![App widget](images/es_ES.png)
+
+    pt_BR: 
+
+    ![App widget](images/pt_BR.png)
+
+6. Para utilizar as internacionalização os micro apps devem utilizar a dependência **i18n** presente na *micro commons dependencies* e as chaves dos arquivos de internacionalização.
+
+7. Confira o import da micro commons dependencies no pubspec.yml de ambos micro apps clonados.
+
+    ```yml
+    micro_commons_dependencies_remp:
+        git:
+        url: https://deploy_token_micro_commons_dependencies_remp:JUPjHsZijQ86Ztz27G4y@git.intelbras.com.br/PlataformaApps/micro_commons_dependencies_remp.git
+        ref: develop
+    ```
+
+8. Desse forma se você deseja internacionalizar seu app, basta registar as chaves e valores nos arquivos de internacionalização do **base app** e utilizá-las nos micro apps por intermédio da **i18n**.
+
+9. Veja os exemplos em ambos os micro apps no path *lib\app\presentation\pages*
+
+    Micro App Example 1:
+    
+    ![App widget](images/micro_app_i18n_1.png)
+
+    Micro App Example 1:
+
+    ![App widget](images/micro_app_i18n_2.png)
+
+10. Mude o idioma do emulador ou celular utilizado e execute base app para testar a internacionalização.
+
+11. No exemplo dado neste tutorial são suportados os idiomas Inglês, Português e Espanhol.
+
+12. Agora você está pronto para internacionalizar seus apps.
+
+
+
+
+
+
+
+
 
 [link-plataforma-apps]: https://git.intelbras.com.br/PlataformaApps
 [link-visual-studio-code]: https://code.visualstudio.com/
