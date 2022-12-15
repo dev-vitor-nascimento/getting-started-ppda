@@ -310,9 +310,9 @@ Nesta seção será descrito como internacionalizar micro apps.
         ref: develop
     ```
 
-8. Desse forma se você deseja internacionalizar seu app, basta registar as chaves e valores nos arquivos de internacionalização do **base app** e utilizá-las nos micro apps por intermédio da **i18n**.
+8. Dessa forma se você deseja internacionalizar seu app, basta registar as chaves e valores nos arquivos de internacionalização do **base app** e utilizá-las nos micro apps por intermédio da **i18n**.
 
-9. Veja os exemplos em ambos os micro apps no path *lib\app\presentation\pages*
+9. Veja os exemplos em ambos os micro apps no path *lib/app/presentation/pages*
 
     Micro App Example 1:
     
@@ -328,13 +328,7 @@ Nesta seção será descrito como internacionalizar micro apps.
 
 12. Agora você está pronto para internacionalizar seus apps.
 
-
-
-
-
-
-
-
+---
 
 [link-plataforma-apps]: https://git.intelbras.com.br/PlataformaApps
 [link-visual-studio-code]: https://code.visualstudio.com/
