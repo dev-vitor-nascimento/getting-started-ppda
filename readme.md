@@ -142,7 +142,7 @@ Nesta seção será descrito como criar um novo micro app para a plataforma.
 
 ---
 
-## 💡 Comunicação entre micro apps e internacionalização.
+## 💡 Comunicação entre micro apps.
 Nesta seção será descrito como realizar a comunicação entre micro apps.
 
 Para seguir com este tutorial é necessário que você já tenha conhecimento necessário para criar base app e micro apps.
