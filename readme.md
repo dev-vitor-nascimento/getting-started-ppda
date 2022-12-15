@@ -318,7 +318,7 @@ Nesta seção será descrito como internacionalizar micro apps.
     
     ![App widget](images/micro_app_i18n_1.png)
 
-    Micro App Example 1:
+    Micro App Example 2:
 
     ![App widget](images/micro_app_i18n_2.png)
 
