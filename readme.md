@@ -86,22 +86,52 @@ Nesta seção será descrito como criar um novo micro app para a plataforma.
    
     Todo micro app deve ter uma classe **MicroAppResolver** que implementará a classe abstrata **MicroApp** declarada no Micro Core.
 
-    ![Micro app resolver](images/micro_app_resolver.png)
+    ```dart
+    import 'package:micro_core/app/micro_core_utils.dart';
+    import 'package:micro_core/app/mircoapp.dart';
 
-    Certifique-se de implementar todos os getters necessários.
+    class MicroAppResolver implements MicroApp {
+        @override
+        void Function() get createListener => () {};
+
+        @override
+        void Function() get injectionsRegister => () {};
+
+        @override
+        String get microAppName => "micro app teste";
+
+        @override
+        Map<String, WidgetBuilderArgs> get routes => {};
+    }
+    ```
 
     - microAppName: deve retorar um string com o nome do micro_app.
     - injectionsRegister: deve retornar uma função responsável por criar as injeções de dependência.
     - createListener: deve retornar uma função responsável por registar os eventos que serão observados pelo micro app.
     - routes: deve retornar uma função responsável por retornar um Map de rotas nomeadas do micro app.
 
-    Em micro apps novos podemos retornar funções ou maps vazios, uma vez um que o micro app ainda nao tem rotas, eventos ou injeção de dependencia, como visto na imagem acima.
+    Em micro apps novos podemos retornar funções ou maps vazios, uma vez um que o micro app ainda nao tem rotas, eventos ou injeção de dependencia, como visto no exemplo acima.
 
     Uma vez com a classe implementada, você terá um micro app que pode ser utilizado por qualquer base app.
 
 7.  Crie um página simples para testar o uso do seu micro app.
 
-    ![Simple page](images/simple_page.png)
+    ```dart
+    import 'package:flutter/material.dart';
+
+    class MyPage extends StatelessWidget {
+        const MyPage({Key? key}) : super(key: key);
+
+        @override
+        Widget build(BuildContext context) {
+            return Scaffold(
+                appBar: AppBar(
+                    title: const Text("Hello World"),
+                ),
+            );
+        }
+    }
+    ```
 
 8.  Abra o **base app** em uma IDE.
 
@@ -124,7 +154,16 @@ Nesta seção será descrito como criar um novo micro app para a plataforma.
 
 10. No arquivo **lib/app/core/micro_apps_resolvers.dart** do base app, adicione a classe **MicroAppResolver** do micro app recém criado à lista de micro apps resolvers.
 
-    ![Micro app resolver](images/micro_app_resolvers.png)
+    ```dart
+    import 'package:micro_app_test/app/core/micro_app_resolver.dart' as micro_app_test;
+    import 'package:micro_core/app/mircoapp.dart';
+
+    class MicroAppResolvers {
+        static List<MicroApp> getMicroAppsResolvers() {
+            return [micro_app_test.MicroAppResolver()];
+        }
+    }
+    ```
 
 11. No app_widget.dart do base app mude o atributo **home** para a página do seu micro app.
 
