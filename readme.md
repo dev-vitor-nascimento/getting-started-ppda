@@ -181,6 +181,87 @@ Nesta seção será descrito como criar um novo micro app para a plataforma.
 
 ---
 
+## Utilizando micro apps já existentes na plataforma
+Nesta seção será descrito com utilizar os micro apps da plataforma.
+
+Para este tutorial iremos intregar um base app, o micro app criado na sessão anterior e o micro app de splash screen pertencente a plataforma
+
+1. No micro app criado na sessão anterior, na pasta lib, cria um arquivo chamado redirect_pages.dart.
+    
+    Neste arquivo deve conter uma função que redireciona para a única página criada no micro app.
+
+    ```dart
+    import 'package:flutter/material.dart';
+    import 'package:micro_app_test/app/pages/my_page.dart';
+    import 'package:micro_core/app/micro_core_utils.dart';
+
+    redirectToMyPage() {
+        Navigator.of(navigatorKey.currentContext!).push(
+            MaterialPageRoute(
+                builder: (context) => const MyPage(),
+            ),
+        );
+    }
+    ```
+
+2. No base app, adicione o micro app de splash como dependência:
+   
+    ```dart
+    micro_app_splash_terms:
+        git:
+            url: https://deploy_token_micro_app_splash_termofuse:oah4GA79yFuQHx5Wndss@git.intelbras.com.br/PlataformaApps/micro_app_splash_termofuse.git
+            ref: base-app-example/develop
+    ```
+
+3. No arquivo lib/app/core/micro_apps_resolvers.dart do base, adicione o resolver do micro app de splash:
+   
+    ```dart
+    import 'package:micro_app_test/app/core/micro_app_resolver.dart' as micro_app_test;
+    import 'package:micro_app_splash_terms/app/core/micro_app_resolver.dart' as micro_app_splash;
+    import 'package:micro_core/app/mircoapp.dart';
+
+    class MicroAppResolvers {
+        static List<MicroApp> getMicroAppsResolvers() {
+            return [
+                micro_app_test.MicroAppResolver(),
+                micro_app_splash.MicroAppResolver()
+            ];
+        }
+    }
+    ```
+
+4. O micro app de splash emite um evento que deve ser escutado pelo base app, para redirecionar para a próxima tela.
+   
+   No base App no arquivo lib/app/core/handler_router.dart adicione o seguinte trecho de código, para escutar o evento e fazer o redirecionamento para o micro app criado na sessão anterior:
+
+   ```dart
+    import 'package:micro_app_splash_terms/app/domain/events/event_finish_micro_app.dart';
+    import 'package:micro_app_test/app/infra/redirect_pages.dart';
+    import 'package:micro_core/app/event_bus/eventbus_implementation.dart';
+
+    class HandlerRouter {
+        static void startHandler() {
+            EventBus.on<EventFinishMicroAppSplash>().listen((event) {
+                redirectToMyPage();
+            });
+        }
+    }
+   ```
+
+    o redirecionamento é feito com a função quer criamos no passo 1 desta sessão.
+
+5. Execute o base app para testar, se tudo ocorreu bem deve ser exibida a tela de splash por 3 segudos, e logo após a tela do micro app criado na sessão anterior.
+
+    Splash Screen:
+
+    ![Splash Screen](images/splash_screen.png)
+
+    Página micro app:
+
+    ![App widget](images/my_page_execution.png)
+
+---
+
 ## 💡 Comunicação entre micro apps.
 Nesta seção será descrito como realizar a comunicação entre micro apps.
 
