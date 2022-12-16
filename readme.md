@@ -206,7 +206,7 @@ Para este tutorial iremos intregar um base app, o micro app criado na sessão an
 
 2. No base app, adicione o micro app de splash como dependência:
    
-    ```dart
+    ```yml
     micro_app_splash_terms:
         git:
             url: https://deploy_token_micro_app_splash_termofuse:oah4GA79yFuQHx5Wndss@git.intelbras.com.br/PlataformaApps/micro_app_splash_termofuse.git
